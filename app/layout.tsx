@@ -30,12 +30,16 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <TanstackProvider>
           <Header />
-
           <main>{children}</main>
+          <br />
+          <hr />
+          <br />
           <footer>
             <p>
               Created <time dateTime="2025">2025</time>
+              <br />
             </p>
+            <p>Author Mykhaylo Kit</p>
           </footer>
         </TanstackProvider>
       </body>

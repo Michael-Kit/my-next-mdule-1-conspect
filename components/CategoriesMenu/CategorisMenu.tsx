@@ -1,0 +1,1 @@
+// components/CategoriesMenu/CategoriesMenu.tsx

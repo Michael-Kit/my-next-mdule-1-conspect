@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <>
       <div>
-        <h2 className={css.header}>Header</h2>
-        </div>
+        <h2 className={css.header}>Welcome to Home</h2>
+      </div>
     </>
   );
 }

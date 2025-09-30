@@ -8,11 +8,7 @@ interface Props {
 const NoteItem = ({ item }: Props) => {
   return (
     <li>
-      <br />
-      <Link href={`/notes/${item.id}`}>
-        <h4>{item.title} </h4>
-        <p>{item.content} </p>
-      </Link>
+      <Link href={`/notes/${item.id}`}>{item.title}</Link>
       <br />
     </li>
   );

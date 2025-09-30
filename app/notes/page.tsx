@@ -1,48 +1,49 @@
-/// Client app/notes/page.tsx
+// app/notes/page.
+
+// 1. Імпортуємо функцію
 
 // "use client";
-
-// import Notelist from "@/components/NoteList/Notelist";
-// import { getNotes } from "@/app/lib/api";
-// import { Note } from "@/types/note";
 // import { useState } from "react";
+// import NoteList from "@/components/NoteList/Notelist";
+// import { Note } from "@/lib/api";
+// import { getNotes } from "@/lib/api";
+
+// // 2. Робимо фукнцію асинхронною
 
 // const Notes = () => {
 //   const [notes, setNotes] = useState<Note[]>([]);
 
 //   const handleClick = async () => {
-//     try {
-//       const res = await getNotes();
-//       setNotes(res);
-//     } catch (error) {
-//       console.error(error);
+//     const response = await getNotes();
+//     if (response?.notes) {
+//       setNotes(response.notes);
 //     }
 //   };
 
 //   return (
-//     <div>
-//       <button onClick={handleClick}>Get notes</button>
-//       {notes?.length > 0 && <Notelist items={notes} />}
-//     </div>
+//     <section>
+//       <h1>Notes List</h1>
+//       <button onClick={handleClick}>Get my notes</button>
+//       {notes.length > 0 && <NoteList notes={notes} />}
+//     </section>
 //   );
 // };
 
 // export default Notes;
+// app/notes/page.tsx
 
-// SSR
-// / app/notes/page.tsx
-
-import Notelist from "@/components/NoteList/Notelist";
-import { getNotes } from "@/app/lib/api";
+import NoteList from "@/components/NoteList/Notelist";
+import { getNotes } from "@/lib/api";
 
 const Notes = async () => {
-  const notes = await getNotes();
+  const response = await getNotes();
 
-  // console.log("start promise");
-  // await new Promise((resolve) => setTimeout(() => resolve(true), 1000));
-  // console.log("loaded");
-
-  return <div>{notes?.length > 0 && <Notelist items={notes} />}</div>;
+  return (
+    <section>
+      <h1>Notes List</h1>
+      {response?.notes?.length > 0 && <NoteList notes={response.notes} />}
+    </section>
+  );
 };
 
 export default Notes;

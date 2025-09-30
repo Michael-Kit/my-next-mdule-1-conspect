@@ -18,11 +18,11 @@ interface NoteListResponse {
 }
 
 export const getNotes = async () => {
-  const { data } = await instance.get<NoteListResponse>("/notes");
-  return data.notes;
+  const res = await instance.get<NoteListResponse>("/notes");
+  return res.data;
 };
 
 export const getSingleNote = async (id: string) => {
-  const { data } = await instance.get<Note>(`/notes/${id}`);
-  return data;
+  const res = await axios.get<Note>(`/notes/${id}`);
+  return res.data;
 };

@@ -1,10 +1,21 @@
-import css from "./page.module.css";
+// app/profile/page.tsx
+
+import Link from "next/link";
 
 const Profile = () => {
   return (
-    <div>
-      <h1 className={css.title}>Profile</h1>
-    </div>
+    <section>
+      <h1>My Profile</h1>
+      <h2>Name: User name: Mykhaylo Kit</h2>
+      <p>
+        Some description: Lorem, ipsum dolor sit amet consectetur adipisicing
+        elit. Cumque non quis, vero consectetur eum at commodi facere error,
+        laborum, rerum labore corrupti neque veritatis sed minima et nam. Autem,
+        cumque.
+      </p>
+
+      <Link href="/profile/edit">Edit profile</Link>
+    </section>
   );
 };
 

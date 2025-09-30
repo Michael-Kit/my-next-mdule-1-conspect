@@ -1,15 +1,15 @@
 import { Note } from "@/types/note";
-import NoteItem from "../HoteItem/NoteItem";
+import NoteItem from "../NoteItem/NoteItem";
 
 interface Props {
-  items: Note[];
+  notes: Note[];
 }
 
-const Notelist = ({ items }: Props) => {
+const Notelist = ({ notes }: Props) => {
   return (
     <ul>
-      {items.map((item) => (
-        <NoteItem item={item} key={item.id} />
+      {notes.map((note) => (
+        <NoteItem key={note.id} item={note} />
       ))}
     </ul>
   );
