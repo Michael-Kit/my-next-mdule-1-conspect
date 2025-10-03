@@ -1,4 +1,3 @@
-// app/docs/[...slug]/page.tsx
 // app/notes/filter/[...slug]/page.tsx
 
 import { getNotes } from "@/lib/api";

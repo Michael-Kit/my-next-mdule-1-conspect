@@ -1,22 +1,24 @@
 // components/Header/Header.tsx
-
-import css from "./Header.module.css";
+// components/Header/Header.tsx
 
 import Link from "next/link";
+import CategoriesMenu from "../CategoriesMenu/CategorisMenu";
+import { categories } from "@/lib/api";
 
-const Header = () => {
+const Header = async () => {
+  // Симуляція getCategories без запиту
+  const getCategories = async () => Promise.resolve(categories);
+  const categoryList = await getCategories();
+
   return (
-    <header className={css.header}>
+    <header>
       <Link href="/" aria-label="Home">
-        Note Hub
+        NoteHub
       </Link>
       <nav aria-label="Main Navigation">
-        <ul className={css.navigation}>
+        <ul>
           <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/notes">Notes</Link>
+            <CategoriesMenu categories={categoryList} />
           </li>
           <li>
             <Link href="/profile">Profile</Link>
