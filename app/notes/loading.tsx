@@ -1,6 +1,7 @@
 // app/notes/loading.tsx
+
 const Loading = () => {
-  return <div>Loading notes..</div>;
+  return <p>Завантаження нотатків...</p>;
 };
 
 export default Loading;

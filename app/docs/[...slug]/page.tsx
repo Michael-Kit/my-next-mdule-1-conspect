@@ -1,24 +1,16 @@
 // app/docs/[...slug]/page.tsx
-// app/notes/filter/[...slug]/page.tsx
-
-import { getNotes } from "@/lib/api";
-import NoteList from "@/components/NoteList/Notelist";
 
 type Props = {
-  params: Promise<{ slug: string[] }>;
+  params: { slug?: string[] }; // slug може бути undefined
 };
 
-const NotesByCategory = async ({ params }: Props) => {
-  const { slug } = await params;
-  const category = slug[0] === "all" ? undefined : slug[0];
-  const response = await getNotes(category);
+export default async function DocsPage({ params }: Props) {
+  const path = params.slug?.join(" / ") || "home";
 
   return (
     <div>
-      <h1>Notes List</h1>
-      {response?.notes?.length > 0 && <NoteList notes={response.notes} />}
+      <h1>Docs page</h1>
+      <p>Current path: {path}</p>
     </div>
   );
-};
-
-export default NotesByCategory;
+}

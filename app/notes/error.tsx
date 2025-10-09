@@ -1,13 +1,14 @@
 // app/notes/error.tsx
+// app/notes/error.tsx
 
 "use client";
 
-interface Props {
+type Props = {
   error: Error;
   reset: () => void;
-}
+};
 
-const NotesError = ({ error, reset }: Props) => {
+const Error = ({ error, reset }: Props) => {
   return (
     <div>
       <h2>Помилка при завантаженні</h2>
@@ -17,4 +18,4 @@ const NotesError = ({ error, reset }: Props) => {
   );
 };
 
-export default NotesError;
+export default Error;

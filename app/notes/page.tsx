@@ -30,6 +30,7 @@
 // };
 
 // export default Notes;
+
 // app/notes/page.tsx
 
 import NoteList from "@/components/NoteList/Notelist";

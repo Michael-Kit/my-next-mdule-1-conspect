@@ -1,11 +1,13 @@
-import { Note } from "@/types/note";
+// components/NoteList/NoteList.tsx
+
+import { Note } from "@/lib/api";
 import NoteItem from "../NoteItem/NoteItem";
 
-interface Props {
+type Props = {
   notes: Note[];
-}
+};
 
-const Notelist = ({ notes }: Props) => {
+const NoteList = ({ notes }: Props) => {
   return (
     <ul>
       {notes.map((note) => (
@@ -15,4 +17,4 @@ const Notelist = ({ notes }: Props) => {
   );
 };
 
-export default Notelist;
+export default NoteList;
