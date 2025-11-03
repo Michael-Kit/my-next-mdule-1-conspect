@@ -1,5 +1,7 @@
 // components/NoteItem/NoteItem.tsx
 
+// components/NoteItem/NoteItem.tsx
+
 import Link from "next/link";
 import { Note } from "@/lib/api";
 

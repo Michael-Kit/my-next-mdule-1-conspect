@@ -27,7 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/notes/id]/NoteDetails.client"
+    "app/notes/[id]/NoteDetails.clientNoteDetails.client"
   ],
   "exclude": ["node_modules"]
 }

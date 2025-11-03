@@ -1,4 +1,3 @@
-// SSR
 // app/notes/[id]/page.tsx
 
 import {
